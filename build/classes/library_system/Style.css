@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 5, 2021, 7:11:14 PM
+    Author     : Gab
+*/
+
+.Books_button
+{
+    -fx-background-image: url("/library_system/book.png");
+    -fx-background-size: 85px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 25%;
+
+}
+.Button_Register
+{
+     -fx-background-image: url("/library_system/reg.png");
+    -fx-background-size: 80px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 20%;
+}
+.View_IssuedBook
+{
+     -fx-background-image: url("/library_system/books2.png");
+    -fx-background-size: 80px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 20%;
+}
+.Category, .text-field
+{
+    -fx-background-color: transparent;
+}
+.combo-box-popup  .list-cell
+{
+    -fx-background-color:   #e6eaee;
+}
+.combo-box-popup, .cell:selected
+{
+    -fx-background-color: red;
+}
