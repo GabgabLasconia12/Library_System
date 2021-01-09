@@ -23,6 +23,7 @@ public class Library_System extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
+       stage.setTitle("Library System");
         stage.setResizable(false);
         stage.setHeight(600);
         stage.setWidth(900);
