@@ -30,7 +30,11 @@ import javafx.stage.Stage;
 public class Add_Book_FormController implements Initializable {
 
   
+<<<<<<< HEAD
     //tang ina mo
+=======
+    
+>>>>>>> 1c3996781d90d35c4d0f53bdbd9ecb86cff9d219
     @FXML
     private Button btnAdd_Book;
     
