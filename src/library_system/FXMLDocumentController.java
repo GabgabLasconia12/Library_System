@@ -31,6 +31,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Gab
  */
+// Login
 public class FXMLDocumentController implements Initializable {
 
    @FXML
