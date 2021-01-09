@@ -11,28 +11,27 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="529.0" prefWidth="866.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="library_system.View_issuedBookController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #e6eaee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.View_issuedBookController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="529.0" layoutX="-1.0" stroke="transparent" strokeType="INSIDE" width="233.0" />
-      <Line endX="121.0" layoutX="117.0" layoutY="201.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
-      <Label layoutX="97.0" layoutY="215.0" text="Admin" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="580.0" layoutX="-2.0" stroke="transparent" strokeType="INSIDE" width="225.0" />
+      <Line endX="90.0" layoutX="133.0" layoutY="205.0" opacity="0.3" startX="-135.0" stroke="WHITE" />
+      <Label layoutX="81.0" layoutY="215.0" text="Admin" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogout" layoutX="-2.0" layoutY="469.0" mnemonicParsing="false" onAction="#Logout" prefHeight="44.0" prefWidth="233.0" style="-fx-background-color: rgb(10, 36, 49); -fx-border-color: transparent;" text="Logout" textFill="WHITE">
+      <Button fx:id="btnLogout" layoutX="-4.0" layoutY="510.0" mnemonicParsing="false" onAction="#Logout" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: rgb(10, 36, 49); -fx-border-color: transparent;" text="Logout" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <ImageView fitHeight="225.0" fitWidth="225.0" layoutX="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="225.0" fitWidth="225.0" layoutX="7.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/admin-01.png" />
          </image>
       </ImageView>
-      <Line endX="100.0" layoutX="132.0" layoutY="465.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
-      <TableView layoutX="256.0" layoutY="53.0" prefHeight="416.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
+      <Line endX="89.99996948242188" layoutX="131.0" layoutY="502.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
+      <TableView layoutX="256.0" layoutY="53.0" prefHeight="443.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
          <columns>
             <TableColumn prefWidth="169.0" text="Book Name" />
             <TableColumn prefWidth="219.00003051757812" text="Student name" />
@@ -40,10 +39,10 @@
          </columns>
       </TableView>
       <Label layoutX="243.0" layoutY="16.0" style="-fx-font-weight: bold;" text="Issued Book">
-         <font>
+         <font> 
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="481.0" layoutY="484.0" onAction="#Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnBack" layoutX="476.0" layoutY="518.0" onAction="#Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>

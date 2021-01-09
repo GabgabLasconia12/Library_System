@@ -11,7 +11,10 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -37,6 +40,11 @@ public class Add_Book_FormController implements Initializable {
     @FXML
     private ComboBox Category;
     
+    @FXML
+    private void Awit()
+    {
+        System.out.print("Awit");
+    }
   
     
     @FXML
@@ -59,6 +67,8 @@ public class Add_Book_FormController implements Initializable {
           ObservableList<String> BookCategories = FXCollections.observableArrayList("Fiction", "non-fiction",
                   "Fantasy", "History", "Educational");
           Category.setItems(BookCategories);
+          
+          
     }    
     
 }

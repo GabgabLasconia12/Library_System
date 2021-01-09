@@ -9,16 +9,16 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="529.0" prefWidth="866.0" style="-fx-background-color: #e6eaee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.AdminController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #e6eaee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.AdminController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="529.0" layoutX="-4.0" stroke="transparent" strokeType="INSIDE" width="225.0" />
-      <Line endX="121.0" layoutX="123.0" layoutY="195.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
-      <Label layoutX="84.0" layoutY="205.0" text="Admin" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="580.0" layoutX="-2.0" stroke="transparent" strokeType="INSIDE" width="225.0" />
+      <Line endX="90.0" layoutX="133.0" layoutY="205.0" opacity="0.3" startX="-135.0" stroke="WHITE" />
+      <Label layoutX="81.0" layoutY="215.0" text="Admin" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="Logout" layoutX="1.0" layoutY="448.0" mnemonicParsing="false" onAction="#Admin_logout" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: rgb(10, 36, 49); -fx-border-color: transparent;" text="Logout" textFill="WHITE">
+      <Button fx:id="Logout" layoutX="-4.0" layoutY="510.0" mnemonicParsing="false" onAction="#Admin_logout" prefHeight="44.0" prefWidth="215.0" style="-fx-background-color: rgb(10, 36, 49); -fx-border-color: transparent;" text="Logout" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
@@ -46,6 +46,6 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Line endX="89.99996948242188" layoutX="130.0" layoutY="448.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
+      <Line endX="89.99996948242188" layoutX="131.0" layoutY="502.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
    </children>
 </AnchorPane>

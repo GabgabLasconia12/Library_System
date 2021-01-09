@@ -3,17 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Screen1Controller.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Admin_LoginController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/AdminController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Add_Book_Form.fxml</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Student_Register.fxml</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/View_issuedBookController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/BooksController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Add_Book_FormController.java</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/View_issuedBook.fxml</file>
-            <file>file:/C:/Users/Gab/Library_System/src/library_system/Student_RegisterController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/View_issuedBookController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Screen1.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Return_Book.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/FXMLDocument.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Screen1Controller.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Issue_BookController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/View_issuedBook.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Return_BookController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Admin_Login.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Student_RegisterController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Admin.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/AdminController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Books.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Add_Book_FormController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/BooksController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Style.css</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Add_Book_Form.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Issue_Book.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Student_Register.fxml</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Admin_LoginController.java</file>
+            <file>file:/C:/Users/Gab/LibrarySystem/src/library_system/Library_System.java</file>
         </group>
     </open-files>
 </project-private>

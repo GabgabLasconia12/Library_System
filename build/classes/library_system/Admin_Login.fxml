@@ -8,25 +8,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="529.0" prefWidth="866.0" style="-fx-background-color: #e6eaee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.Admin_LoginController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #e6eaee;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.Admin_LoginController">
    <children>
-      <ImageView fitHeight="317.0" fitWidth="317.0" layoutX="281.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="317.0" fitWidth="317.0" layoutX="298.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/Admin_DP-01.png" />
          </image>
       </ImageView>
-      <Label layoutX="396.0" layoutY="222.0" text="ADMIN">
+      <Label layoutX="413.0" layoutY="234.0" text="ADMIN">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <PasswordField fx:id="Admin_Password" layoutX="277.0" layoutY="285.0" prefHeight="37.0" prefWidth="329.0" promptText="Password" style="-fx-background-color: #e6eaee; -fx-border-color: rgb(64, 158, 131); -fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-border-width: 2;" />
-      <Button fx:id="Admin_loginButton" layoutX="460.0" layoutY="359.0" onAction="#Admin_Login" prefHeight="35.0" prefWidth="184.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Login" textFill="WHITE" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="222.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+      <PasswordField fx:id="Admin_Password" layoutX="294.0" layoutY="297.0" prefHeight="37.0" prefWidth="329.0" promptText="Password" style="-fx-background-color: #e6eaee; -fx-border-color: rgb(64, 158, 131); -fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-border-width: 2;" />
+      <Button fx:id="Admin_loginButton" layoutX="477.0" layoutY="371.0" onAction="#Admin_Login" prefHeight="35.0" prefWidth="184.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Login" textFill="WHITE" />
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="239.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/password-01.png" />
          </image>
       </ImageView>
-      <Button fx:id="Back" layoutX="239.0" layoutY="359.0" onAction="#Back" prefHeight="35.0" prefWidth="168.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
+      <Button fx:id="Back" layoutX="256.0" layoutY="371.0" onAction="#Back" prefHeight="35.0" prefWidth="168.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>

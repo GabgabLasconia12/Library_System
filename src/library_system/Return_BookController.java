@@ -23,17 +23,16 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Gab
  */
-public class Screen1Controller implements Initializable {
-
-   
+public class Return_BookController implements Initializable 
+{
     @FXML
-    private AnchorPane rootPane1;
+    private Button back;
     
     @FXML
     private Button Logout;
     
     @FXML
-    private Button Return_Book;
+    private AnchorPane rootPane;
     
     @FXML
     private Button Issue_Book;
@@ -42,33 +41,33 @@ public class Screen1Controller implements Initializable {
     private void _Issue_Book() throws IOException
     {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("Issue_Book.fxml"));
-          rootPane1.getChildren().setAll(pane);
+            rootPane.getChildren().setAll(pane);
     }
-            
+    
     @FXML
-    private void _Return_Book() throws IOException
+    private void _Back() throws IOException
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("Return_Book.fxml"));
-          rootPane1.getChildren().setAll(pane);
+          AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
+            rootPane.getChildren().setAll(pane);
     }
     
     @FXML
     private void _Logout() throws IOException
     {
-        ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
+         ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
        ButtonType NO = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
-       Alert dg = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure do you want to logout", YES,NO );
+       Alert dg = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure do you want to logout?", YES,NO );
        Optional<ButtonType> result = dg.showAndWait();
        if(result.get()== YES)
        {
            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            rootPane1.getChildren().setAll(pane);
+            rootPane.getChildren().setAll(pane);
        }
-      
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) 
+    {
         // TODO
     }    
     

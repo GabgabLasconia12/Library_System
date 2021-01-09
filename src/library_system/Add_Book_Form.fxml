@@ -85,7 +85,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="btnAdd_Book" layoutX="258.0" layoutY="576.0" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Add Book" textFill="WHITE" />
+      <Button fx:id="btnAdd_Book" layoutX="258.0" layoutY="576.0" onAction="#Awit" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Add Book" textFill="WHITE" />
       <Button fx:id="btnCancel" layoutX="46.0" layoutY="576.0" onAction="#Cancel" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Cancel" textFill="WHITE" />
    </children>
 </AnchorPane>

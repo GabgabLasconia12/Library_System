@@ -46,7 +46,7 @@ public class BooksController implements Initializable {
     @FXML
     private void _addBookForm(ActionEvent event) throws IOException
     {
-        System.out.println("Awit");
+    
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Add_Book_Form.fxml"));
             //PARENT A simple node that can hold other nodes as a child. kada scene isang parent also known as  root lang ang pwede
             Parent root1 = (Parent) fxmlLoader.load();
