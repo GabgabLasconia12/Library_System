@@ -23,7 +23,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Gab
  */
-//USER  
+//User 
 public class Screen1Controller implements Initializable {
 
    
