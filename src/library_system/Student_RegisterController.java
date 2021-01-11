@@ -74,7 +74,10 @@ public class Student_RegisterController implements Initializable
         student.setStudentId(studentId.getText());
         student.setPassword(Password.getText());
         student.setCourse(Course.getText());
-        Info.add(student.getFirstName());
+           
+    
+     
+           Info.add(student.getFirstName());
         Info.add(student.getLastName());
         Info.add(student.getMiddleName());
         Info.add(student.getStudentId());
@@ -89,16 +92,28 @@ public class Student_RegisterController implements Initializable
                fw.write(info+"-");
         }
             fw.close();
-        System.out.println(student.getFirstName()+" "+student.getMiddleName()+" "+student.getLastName());
-        System.out.println("Password "+student.getPassword());
-        System.out.println("Course "+student.getCourse());
-        System.out.println("Student Id "+student.getStudentId());
+            
+            firstName.clear();
+            lastName.clear();
+            middleName.clear();
+            studentId.clear();
+            Password.clear();
+            Course.clear();
+         Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "Registered Succesfully!"); 
+         AlertBox.showAndWait();
+       
+        
+            
+        //System.out.println(student.getFirstName()+" "+student.getMiddleName()+" "+student.getLastName());
+       // System.out.println("Password "+student.getPassword());
+       // System.out.println("Course "+student.getCourse());
+       // System.out.println("Student Id "+student.getStudentId());
    }
    
     @FXML
     private void cancelRegister() throws IOException
     {
-         ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
+        ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
        ButtonType NO = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
        Alert dg = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure do you want to Cancel?", YES,NO );
        Optional<ButtonType> result = dg.showAndWait();
