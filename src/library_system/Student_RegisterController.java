@@ -5,8 +5,11 @@
  */
 package library_system;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -59,15 +62,33 @@ public class Student_RegisterController implements Initializable
    @FXML
    private Button Cancel;
 
-   @FXML private void Register()
+   @FXML private void Register() throws IOException
    {
         Register_Function student = new Register_Function();
+        ArrayList <String> Info;
+        Info = new ArrayList();
+       
         student.setFirstName(firstName.getText());
         student.setLastName(lastName.getText());
         student.setMiddleName(middleName.getText());
-        student.setStudentId(Integer.parseInt(studentId.getText()));
+        student.setStudentId(studentId.getText());
         student.setPassword(Password.getText());
         student.setCourse(Course.getText());
+        Info.add(student.getFirstName());
+        Info.add(student.getLastName());
+        Info.add(student.getMiddleName());
+        Info.add(student.getStudentId());
+        Info.add(student.getPassword());
+        Info.add(student.getCourse());
+        
+        File file = new File("Students Account");
+        file.mkdir();
+        FileWriter fw = new FileWriter("Students Account/"+student.getLastName());
+        for(String info: Info)
+        {
+               fw.write(info+"-");
+        }
+            fw.close();
         System.out.println(student.getFirstName()+" "+student.getMiddleName()+" "+student.getLastName());
         System.out.println("Password "+student.getPassword());
         System.out.println("Course "+student.getCourse());
