@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -25,7 +28,10 @@ import javafx.stage.Window;
  *
  * @author Gab
  */
-public class Student_RegisterController implements Initializable {
+public class Student_RegisterController implements Initializable 
+{
+    
+
 
     @FXML
     private AnchorPane rootPane;
@@ -34,9 +40,40 @@ public class Student_RegisterController implements Initializable {
     private Button Register;
     
     @FXML
-    private Button Cancel;
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
     
+    @FXML
+    private TextField middleName;
+        
+    @FXML
+    private TextField studentId;
     
+    @FXML
+    private TextField Course;
+    
+    @FXML
+    private PasswordField Password;
+    
+   @FXML
+   private Button Cancel;
+
+   @FXML private void Register()
+   {
+        Register_Function student = new Register_Function();
+        student.setFirstName(firstName.getText());
+        student.setLastName(lastName.getText());
+        student.setMiddleName(middleName.getText());
+        student.setStudentId(Integer.parseInt(studentId.getText()));
+        student.setPassword(Password.getText());
+        student.setCourse(Course.getText());
+        System.out.println(student.getFirstName()+" "+student.getMiddleName()+" "+student.getLastName());
+        System.out.println("Password "+student.getPassword());
+        System.out.println("Course "+student.getCourse());
+        System.out.println("Student Id "+student.getStudentId());
+   }
+   
     @FXML
     private void cancelRegister() throws IOException
     {
@@ -51,8 +88,15 @@ public class Student_RegisterController implements Initializable {
        }
     }
     
+ 
+
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+       
+        
         // TODO
     }    
     
