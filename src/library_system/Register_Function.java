@@ -11,7 +11,7 @@ public class Register_Function extends Student_RegisterController
    String firstName;
    String lastName;
    String middleName;
-   int StudentId;
+   String StudentId;
    String Password;
    String Course;
   
@@ -30,7 +30,7 @@ public class Register_Function extends Student_RegisterController
       this.middleName = MiddleName;
   }
   
-  public void setStudentId(int id)
+  public void setStudentId(String id)
   {
       this.StudentId = id;
   }
@@ -45,7 +45,7 @@ public class Register_Function extends Student_RegisterController
       this.Course = _Course;
   }
   
-  public int getStudentId()
+  public String getStudentId()
   {
       return StudentId;
   }
