@@ -10,8 +10,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Stack;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,36 +58,51 @@ public class Student_RegisterController implements Initializable
     @FXML
     private TextField Course;
     
-    @FXML
-    private PasswordField Password;
+    
     
    @FXML
    private Button Cancel;
 
    @FXML private void Register() throws IOException
    {
-        Register_Function student = new Register_Function();
+        Register_Login_Function student = new Register_Login_Function();
         ArrayList <String> Info;
         Info = new ArrayList();
        
+        
+        
         student.setFirstName(firstName.getText());
         student.setLastName(lastName.getText());
         student.setMiddleName(middleName.getText());
         student.setStudentId(studentId.getText());
-        student.setPassword(Password.getText());
         student.setCourse(Course.getText());
            
-    
-     
-           Info.add(student.getFirstName());
+        if(firstName.getText().isEmpty() && lastName.getText().isEmpty() && middleName.getText().isEmpty() && studentId.getText().isEmpty()
+                &&  Course.getText().isEmpty() )
+        {
+            Alert dg = new Alert(Alert.AlertType.ERROR, "all field are required");
+            dg.showAndWait();
+        }
+        else
+        {
+        Info.add(student.getFirstName());
         Info.add(student.getLastName());
         Info.add(student.getMiddleName());
         Info.add(student.getStudentId());
         Info.add(student.getPassword());
         Info.add(student.getCourse());
+        student.StudentIdCollection.add(studentId.getText());
         
         File file = new File("Students Account");
         file.mkdir();
+        File StudentidCollec = new File("Students_Id");
+        StudentidCollec.mkdir();
+        FileWriter wf = new FileWriter("Students_Id/"+student.getStudentId()+".txt");
+        for(String idcollection : student.StudentIdCollection)
+        {
+            wf.write(idcollection);
+        }
+        wf.close();
         FileWriter fw = new FileWriter("Students Account/"+student.getLastName());
         for(String info: Info)
         {
@@ -97,17 +114,15 @@ public class Student_RegisterController implements Initializable
             lastName.clear();
             middleName.clear();
             studentId.clear();
-            Password.clear();
             Course.clear();
          Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "Registered Succesfully!"); 
          AlertBox.showAndWait();
-       
-        
-            
-        //System.out.println(student.getFirstName()+" "+student.getMiddleName()+" "+student.getLastName());
-       // System.out.println("Password "+student.getPassword());
-       // System.out.println("Course "+student.getCourse());
-       // System.out.println("Student Id "+student.getStudentId());
+         for( String ob: student.StudentIdCollection)
+         {
+           System.out.print(ob);
+         }
+        }
+  
    }
    
     @FXML

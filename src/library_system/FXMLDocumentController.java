@@ -5,10 +5,18 @@
  */
 package library_system;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -78,26 +86,31 @@ public class FXMLDocumentController implements Initializable {
         String id = "2000123";
         String pass = "try123";
         String name = "Ira";
-            
-        
-       if(Id.getText().equals(id) && Password.getText().equals(pass))
+        Register_Login_Function Student = new Register_Login_Function();
+        try 
         {
-            System.out.println("login complete");
-           AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
+            
+            File read = new File("/Users/Gab/Desktop/try/Library_System/Students_Id/"+Id.getText()+".txt");
+            Scanner Reader = new Scanner(read);
+            String a = Reader.nextLine();
+               if(Id.getText().equals(a))
+        {
+          System.out.println("login complete");
+          AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
           rootPane.getChildren().setAll(pane);
              
-         
+        }
             
         }
-        else
-        {
-            System.out.println("Invalid");
+        catch (FileNotFoundException e) {
+        System.out.println("An error occurred.");
+       System.out.println("Invalid");
              Alert dg = new Alert(Alert.AlertType.ERROR, "Wrong password or Id Number");
         
          Optional<ButtonType> result = dg.showAndWait();
         }
-       
-       
-    }
     
+          
+    
+}
 }
