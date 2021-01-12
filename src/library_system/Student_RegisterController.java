@@ -85,12 +85,11 @@ public class Student_RegisterController implements Initializable
         }
         else
         {
+        Info.add(student.getStudentId());
+        Info.add(student.getCourse());
         Info.add(student.getFirstName());
         Info.add(student.getLastName());
         Info.add(student.getMiddleName());
-        Info.add(student.getStudentId());
-        Info.add(student.getPassword());
-        Info.add(student.getCourse());
         student.StudentIdCollection.add(studentId.getText());
         
         File file = new File("Students Account");
@@ -103,7 +102,7 @@ public class Student_RegisterController implements Initializable
             wf.write(idcollection);
         }
         wf.close();
-        FileWriter fw = new FileWriter("Students Account/"+student.getLastName());
+        FileWriter fw = new FileWriter("Students Account/"+student.getLastName()+".txt");
         for(String info: Info)
         {
                fw.write(info+"-");
