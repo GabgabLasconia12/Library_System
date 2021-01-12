@@ -5,7 +5,11 @@
  */
 package library_system;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -20,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -40,14 +45,82 @@ public class Add_Book_FormController implements Initializable {
     private Button btnCancel;
     
     @FXML
-    private ComboBox Category;
+    private TextField BookName;
+    @FXML
+    private TextField BookDescription;
+    @FXML
+    private TextField BookTitle;
+    @FXML
+    private TextField BookAuthor;
+    @FXML
+    private TextField BookPage;
+    
+    @FXML
+    private ComboBox BookCategory;
     
     @FXML
     private void Awit()
     {
         System.out.print("Awit");
     }
-
+    
+    @FXML
+    public void AddBook() throws IOException
+    {
+        ArrayList <String> BookInfo;
+        BookInfo = new ArrayList();
+        
+        Add_Book_Function AddBook = new Add_Book_Function();
+        
+        
+        
+        AddBook.setBookName(BookName.getText());
+         AddBook.setBookCategory((String) BookCategory.getValue());
+        AddBook.setBookDescription(BookDescription.getText());
+        AddBook.setBookTitle(BookTitle.getText());
+        AddBook.setBookAuthor(BookAuthor.getText());
+        AddBook.setBookPage(BookPage.getText());
+      
+        BookInfo.add(AddBook.getBookName());
+       BookInfo.add(AddBook.getBookCategory());
+        BookInfo.add(AddBook.getBookDescription());
+        BookInfo.add(AddBook.getBookTitle());
+        BookInfo.add(AddBook.getBookAuthor());
+        BookInfo.add(AddBook.getBookPage());
+        
+        if(BookName.getText().isEmpty() && BookCategory.getValue()== null && BookDescription.getText().isEmpty() && BookTitle.getText().isEmpty()
+                && BookAuthor.getText().isEmpty() && BookPage.getText().isEmpty())
+        {
+            Alert dg = new Alert(Alert.AlertType.ERROR, "all field are required");
+            dg.showAndWait();
+        }
+        else
+        {
+        File Books = new File("Book List");
+        Books.mkdir();
+        FileWriter wr = new FileWriter("Book List/"+AddBook.getBookTitle()+".txt");
+        for(String books : BookInfo)
+        {
+            wr.write(books+"-");
+        }
+            wr.close();
+      
+        }
+        BookName.clear();
+        BookPage.clear();
+        BookTitle.clear();
+        BookAuthor.clear();
+        BookDescription.clear();
+        BookCategory.valueProperty().set(null);
+        Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "Book added succesfully!"); 
+        AlertBox.showAndWait();
+     
+       
+        
+       
+        
+    }
+    
     
     @FXML
     private void Cancel()
@@ -66,9 +139,9 @@ public class Add_Book_FormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-          ObservableList<String> BookCategories = FXCollections.observableArrayList("Fiction", "non-fiction",
+          ObservableList <String> BookCategories = FXCollections.observableArrayList("Fiction", "non-fiction",
                   "Fantasy", "History", "Educational");
-          Category.setItems(BookCategories);
+          BookCategory.setItems(BookCategories);
           
           
     }    
