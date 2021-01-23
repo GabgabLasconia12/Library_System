@@ -102,7 +102,7 @@ public class Student_RegisterController implements Initializable
             wf.write(idcollection);
         }
         wf.close();
-        FileWriter fw = new FileWriter("Students Account/"+student.getLastName()+".txt");
+        FileWriter fw = new FileWriter("Students Account/"+student.getStudentId()+".txt");
         for(String info: Info)
         {
                fw.write(info+"-");

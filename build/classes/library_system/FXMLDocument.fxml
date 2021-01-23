@@ -18,8 +18,8 @@
          <bottom>
             <Pane onKeyReleased="#ShorcutToAdmin" prefHeight="580.0" prefWidth="900.0" style="-fx-background-color: #e6eaee;" BorderPane.alignment="CENTER">
                <children>
-                    <Button fx:id="button" layoutX="512.0" layoutY="383.0" onAction="#handleButtonAction" onKeyPressed="#ShorcutToAdmin" prefHeight="35.0" prefWidth="197.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Login" textFill="WHITE" />
-                  <TextField fx:id="Id" layoutX="386.0" layoutY="287.0" prefHeight="37.0" prefWidth="307.0" promptText="Id Number" style="-fx-background-color: #e6eaee; -fx-border-color: rgb(64, 158, 131); -fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-border-width: 2;">
+                    <Button fx:id="btn" layoutX="512.0" layoutY="383.0" onAction="#handleButtonAction" onKeyPressed="#ShorcutToAdmin" prefHeight="35.0" prefWidth="197.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Login" textFill="WHITE" />
+                  <TextField fx:id="Id" layoutX="386.0" layoutY="287.0" onAction="#ShorcutToAdmin" prefHeight="37.0" prefWidth="307.0" promptText="Id Number" style="-fx-background-color: #e6eaee; -fx-border-color: rgb(64, 158, 131); -fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-border-width: 2;">
                     </TextField>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="579.0" stroke="transparent" strokeType="INSIDE" width="225.0" />
                   <Line endX="121.0" layoutX="101.0" layoutY="195.0" opacity="0.3" startX="-100.0" stroke="WHITE" />

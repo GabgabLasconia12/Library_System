@@ -45,7 +45,7 @@ public class Add_Book_FormController implements Initializable {
     private Button btnCancel;
     
     @FXML
-    private TextField BookName;
+    public TextField BookName;
     @FXML
     private TextField BookDescription;
     @FXML
@@ -70,7 +70,7 @@ public class Add_Book_FormController implements Initializable {
         ArrayList <String> BookInfo;
         BookInfo = new ArrayList();
         
-        Add_Book_Function AddBook = new Add_Book_Function();
+       Add_Book_Function AddBook = new Add_Book_Function();
         
         
         
@@ -145,5 +145,5 @@ public class Add_Book_FormController implements Initializable {
           
           
     }    
-    
+  
 }

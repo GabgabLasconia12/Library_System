@@ -36,12 +36,12 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <TableView layoutX="255.0" layoutY="50.0" prefHeight="435.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
-        <columns>
-          <TableColumn prefWidth="169.0" text="Book Name" />
-          <TableColumn prefWidth="172.0" text="TYPE" />
-            <TableColumn prefWidth="247.0" text="Quantity" />
-        </columns>
+      <TableView fx:id="table" layoutX="255.0" layoutY="50.0" prefHeight="435.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
+         <columns>
+            <TableColumn fx:id="Book_Name" prefWidth="202.0" text="Books Name" />
+            <TableColumn fx:id="BookType" prefWidth="196.0" text="Book Type" />
+            <TableColumn fx:id="BookQuantity" prefWidth="190.0" text="Quantity" />
+         </columns>
       </TableView>
       <Button fx:id="Add_Book" layoutX="634.0" layoutY="503.0" onAction="#_addBookForm" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Add Book" textFill="WHITE" />
       <Button fx:id="Back" layoutX="344.0" layoutY="503.0" onAction="#Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />

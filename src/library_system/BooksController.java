@@ -5,10 +5,13 @@
  */
 package library_system;
 
+import java.awt.print.Book;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +23,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -30,9 +36,22 @@ import javafx.stage.Stage;
  */
 public class BooksController implements Initializable {
 
- 
+   
+   
+    
     @FXML
     private AnchorPane rootPane;
+    @FXML
+    private TableView tableBook;
+   
+    @FXML 
+    private TableColumn Book_Name;
+    
+    @FXML 
+    private TableColumn  BookType;
+    
+    @FXML 
+    private TableColumn BookQuantity;
     
     @FXML 
     private Button Add_Book;
@@ -59,7 +78,7 @@ public class BooksController implements Initializable {
            //GETSCENE Gets the value of the property scene// Scene is part of node if the node is not part of a scene then this variable will be null
             //GETWINDOW window might be stage, popupwindow or other such top level
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            
+       
             
     }
     
@@ -86,8 +105,14 @@ public class BooksController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        
+      
     }    
+    
+    
+    
+            
     
 }

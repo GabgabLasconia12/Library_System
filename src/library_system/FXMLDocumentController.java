@@ -1,3 +1,4 @@
+  
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,6 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -86,18 +88,24 @@ public class FXMLDocumentController implements Initializable {
         String id = "2000123";
         String pass = "try123";
         String name = "Ira";
-        Register_Login_Function Student = new Register_Login_Function();
+        //Screen1Controller sc = new Screen1Controller();
+      
         try 
         {
             
-            File read = new File("/Users/Gab/Desktop/try/Library_System/Students_Id/"+Id.getText()+".txt");
+            File read = new File("/Users/Gab/Desktop/try/Library_System/Students Account/"+Id.getText()+".txt");
             Scanner Reader = new Scanner(read);
-            String a = Reader.nextLine();
-               if(Id.getText().equals(a))
+            String [] Student = Reader.next().split("-");
+               if(Id.getText().equals(Student[0]))
         {
+         
           System.out.println("login complete");
-          AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
-          rootPane.getChildren().setAll(pane);
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen1.fxml"));
+           Parent root = loader.load();
+           Screen1Controller student = loader.getController();
+           student.setName(Student[3]+", "+Student[2]);
+           student.setCourse(Student[1]);
+           btn.getScene().setRoot(root);
              
         }
             

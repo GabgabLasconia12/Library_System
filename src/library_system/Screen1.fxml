@@ -19,12 +19,12 @@
             <Image url="@icons/dp2-01.png" />
          </image>
       </ImageView>
-      <Label layoutX="7.0" layoutY="190.0" style="-fx-font-weight: bold;" text="Lasconia, Gabrielle Ira M." textFill="WHITE">
+      <Label fx:id="FullName" layoutX="37.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" text="aaa" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="238.0" style="-fx-font-weight: bold;" text="BSIT" textFill="WHITE">
+      <Label fx:id="Course" layoutX="88.0" layoutY="238.0" style="-fx-font-weight: bold; -fx-text-alignment: center;" text="BSIT" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -42,7 +42,7 @@
          </font>
       </Button>
       <Line endX="126.0" layoutX="113.0" layoutY="367.0" opacity="0.3" startX="-115.0" stroke="WHITE" />
-      <TextField layoutX="302.0" layoutY="97.0" prefHeight="42.0" prefWidth="534.0" promptText="Search" style="-fx-background-radius: 25, 25; -fx-border-radius: 25, 25;">
+      <TextField fx:id="Search" layoutX="302.0" layoutY="97.0" onKeyPressed="#Enter" prefHeight="42.0" prefWidth="534.0" promptText="Search" style="-fx-background-radius: 25, 25; -fx-border-radius: 25, 25;">
          <font>
             <Font size="18.0" />
          </font>
@@ -63,5 +63,6 @@
          </font>
       </Label>
       <Line endX="89.99996948242188" layoutX="131.0" layoutY="502.0" opacity="0.3" startX="-133.0" stroke="WHITE" />
+      <Button fx:id="SearchB" layoutX="778.0" layoutY="96.0" mnemonicParsing="false" onAction="#SearchButton" prefHeight="42.0" prefWidth="57.0" style="-fx-background-radius: 25,25; -fx-border-radius: 25,25; -fx-background-color: transparent;" />
    </children>
 </AnchorPane>

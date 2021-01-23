@@ -5,18 +5,22 @@
  */
 package library_system;
 
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  *
  * @author Gab
  */
 public class Add_Book_Function extends Add_Book_FormController
 {
-    String Book_Name;
-    String Book_Category;
-    String Book_Description;
-    String Book_Title;
-    String Book_Author;
-    String Book_Page;
+   private String Book_Name;
+  private  String Book_Category;
+   private String Book_Description;
+   private String Book_Title;
+  private  String Book_Author;
+   private String Book_Page;
+   
+  
     
     public void setBookName(String BookName)
     {
@@ -24,7 +28,7 @@ public class Add_Book_Function extends Add_Book_FormController
     }
     public void setBookCategory(String BookCategory)
     {
-        this.Book_Category = BookCategory;
+        this.Book_Category =BookCategory;
     }
     public void setBookDescription(String BookDescription)
     {
