@@ -6,10 +6,16 @@
 package library_system;
 
 import java.awt.print.Book;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,6 +34,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import static library_system.Return_BookController.Books;
 
 /**
  * FXML Controller class
@@ -37,21 +44,17 @@ import javafx.stage.Stage;
 public class BooksController implements Initializable {
 
    
-   
+     static  LinkedList<String> Books = new LinkedList<String>();
     
     @FXML
     private AnchorPane rootPane;
     @FXML
-    private TableView tableBook;
+    private TableView  <StackOfBook>tableBook;
    
     @FXML 
-    private TableColumn Book_Name;
+    private TableColumn <StackOfBook, String>Book_Name;
     
-    @FXML 
-    private TableColumn  BookType;
     
-    @FXML 
-    private TableColumn BookQuantity;
     
     @FXML 
     private Button Add_Book;
@@ -107,11 +110,46 @@ public class BooksController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+      Book_Name.setCellValueFactory(new PropertyValueFactory<> ("BookName"));
         
-      
-    }    
+         try {
+             tableBook.setItems(getBooks());
+         } catch (FileNotFoundException ex) {
+             Logger.getLogger(BooksController.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    }
+   
+  
+     public ObservableList<StackOfBook> getBooks() throws FileNotFoundException
+   
+    {
+          LinkedList<String> Books = new LinkedList<String>();
+       File folder = new File("Book List");
+       File [] ListOfBook = folder.listFiles();
+       ObservableList<StackOfBook> observableList = FXCollections.observableArrayList();
+       for(int i = 0; i<ListOfBook.length; i++)
+       {
+           Books.add(ListOfBook[i].getName());
+         
+          
+       }  
+       for(int j = 0; j<Books.size();j++)
+           {
+               System.out.println(j);
+            // observableList.addAll(new StackOfBook(Books.get(j)));
+            observableList.addAll(new StackOfBook(Books.get(j)));
+            
+           }
+        
+                 return observableList;   
+          
+          
+          
+
+       
     
-    
+    }
+  
     
             
     

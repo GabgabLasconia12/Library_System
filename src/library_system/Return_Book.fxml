@@ -20,12 +20,12 @@
             <Image url="@icons/dp2-01.png" />
          </image>
       </ImageView>
-      <Label layoutX="7.0" layoutY="190.0" style="-fx-font-weight: bold;" text="Lasconia, Gabrielle Ira M." textFill="WHITE">
+      <Label fx:id="FullName" layoutX="37.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="238.0" style="-fx-font-weight: bold;" text="BSIT" textFill="WHITE">
+      <Label fx:id="Course" layoutX="88.0" layoutY="238.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -59,12 +59,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="256.0" layoutY="59.0" prefHeight="450.0" prefWidth="618.0">
+      <TableView fx:id="tableView" layoutX="256.0" layoutY="59.0" prefHeight="450.0" prefWidth="618.0">
         <columns>
-          <TableColumn prefWidth="274.9999694824219" text="Book Name" />
-          <TableColumn prefWidth="342.0" text="Date to Return" />
+          <TableColumn fx:id="BookName" prefWidth="274.9999694824219" text="Book Name" />
+          <TableColumn fx:id="DateToReturn" prefWidth="342.0" text="Date To Return" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="501.0" layoutY="525.0" onAction="#_Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
+      <Label fx:id="Name" layoutX="226.0" layoutY="551.0" visible="false" />
    </children>
 </AnchorPane>

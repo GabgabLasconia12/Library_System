@@ -5,17 +5,30 @@
  */
 package library_system;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -25,9 +38,37 @@ import javafx.scene.layout.AnchorPane;
  */
 public class Return_BookController implements Initializable 
 {
+  public static LinkedList<String> Books = new LinkedList<String> ();
+ 
+  
     @FXML
     private Button back;
     
+    @FXML
+    private TableView <ReturnBook>tableView;
+    
+    @FXML
+    private TableColumn <ReturnBook, String>BookName;
+    
+    @FXML
+    private TableColumn <ReturnBook, String> DateToReturn;
+    
+    @FXML
+    private Label FullName;
+    public void setRName(String name)
+    {
+        FullName.setText(name);
+    }
+    @FXML
+   private Label Name;
+    
+    
+    @FXML
+    private Label Course;
+    public void setRCourse(String _Course)
+    {
+        Course.setText(_Course);
+    }
     @FXML
     private Button Logout;
     
@@ -40,15 +81,28 @@ public class Return_BookController implements Initializable
     @FXML
     private void _Issue_Book() throws IOException
     {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("Issue_Book.fxml"));
-            rootPane.getChildren().setAll(pane);
+       // AnchorPane pane = FXMLLoader.load(getClass().getResource("Issue_Book.fxml"));
+          //  rootPane.getChildren().setAll(pane);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Issue_Book.fxml"));
+           Parent root = loader.load();
+           Issue_BookController student = loader.getController();
+           student.setFullName(FullName.getText());
+           student.setICourse(Course.getText());
+           Issue_Book.getScene().setRoot(root);
     }
     
     @FXML
     private void _Back() throws IOException
     {
-          AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
-            rootPane.getChildren().setAll(pane);
+          //AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
+         //   rootPane.getChildren().setAll(pane);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen1.fxml"));
+           Parent root = loader.load();
+           Screen1Controller student = loader.getController();
+           student.setName(FullName.getText());
+           student.setCourse(Course.getText());
+           back.getScene().setRoot(root);
+           //System.out.println(Books.get(0));
     }
     
     @FXML
@@ -68,7 +122,45 @@ public class Return_BookController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
-    }    
+       
+
+            BookName.setCellValueFactory(new PropertyValueFactory<> ("Book_Name"));
+            DateToReturn.setCellValueFactory(new PropertyValueFactory<>("TimeToReturn"));
+          //  Screen1Controller sc = new Screen1Controller();
+        //String bv = sc.FullName.getText();
+        ;
+      try {
+          tableView.setItems(getBook());
+          
+          
+      } catch (FileNotFoundException ex) {
+          Logger.getLogger(Return_BookController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+    
+        }
+
+    
+            
+  //  Subok s = new Subok();
+   //Screen1Controller sc = new Screen1Controller();
+   //Return_BookController rc = new Return_BookController();
+  //  Return_BookController Bok = new Return_BookController();
+   
+    public ObservableList<ReturnBook> getBook() throws FileNotFoundException
+   
+    {
+        
+        File read = new File("/Users/Gab/Desktop/try/Library_System/Borrowed books/"+FullName.getText()+".txt");
+            Scanner Reader = new Scanner(read);
+           Books.add(Reader.next());
+              
+        ObservableList<ReturnBook> observableList = FXCollections.observableArrayList();
+         
+         observableList.add(new ReturnBook(Books.get(0),"12"));
+
+         return observableList;
+    
+    }
     
 }

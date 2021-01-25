@@ -44,6 +44,8 @@ import javafx.scene.layout.AnchorPane;
 // Login
 public class FXMLDocumentController implements Initializable {
 
+    
+   
    @FXML
    public TextField Id;
    @FXML
@@ -96,6 +98,7 @@ public class FXMLDocumentController implements Initializable {
             File read = new File("/Users/Gab/Desktop/try/Library_System/Students Account/"+Id.getText()+".txt");
             Scanner Reader = new Scanner(read);
             String [] Student = Reader.next().split("-");
+            
                if(Id.getText().equals(Student[0]))
         {
          

@@ -11,8 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="580.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="library_system.Issue_BookController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="580.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_system.Issue_BookController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a2431" height="580.0" layoutX="-2.0" stroke="transparent" strokeType="INSIDE" width="225.0" />
       <Line endX="121.0" layoutX="113.0" layoutY="185.0" opacity="0.3" startX="-114.0" stroke="WHITE" />
@@ -21,12 +20,12 @@
             <Image url="@icons/dp2-01.png" />
          </image>
       </ImageView>
-      <Label layoutX="7.0" layoutY="190.0" style="-fx-font-weight: bold;" text="Lasconia, Gabrielle Ira M." textFill="WHITE">
+      <Label fx:id="FullIName" layoutX="37.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="238.0" style="-fx-font-weight: bold;" text="BSIT" textFill="WHITE">
+      <Label fx:id="Course" layoutX="88.0" layoutY="238.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
