@@ -31,11 +31,10 @@
          </image>
       </ImageView>
       <Line endX="89.99996948242188" layoutX="131.0" layoutY="502.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
-      <TableView layoutX="256.0" layoutY="53.0" prefHeight="443.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
+      <TableView fx:id="ViewIssuedBook" layoutX="256.0" layoutY="53.0" prefHeight="443.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
          <columns>
-            <TableColumn prefWidth="169.0" text="Book Name" />
-            <TableColumn prefWidth="219.00003051757812" text="Student name" />
-            <TableColumn prefWidth="200.0" text="Date" />
+            <TableColumn fx:id="Book_Name" prefWidth="296.0" text="Book Name" />
+            <TableColumn fx:id="StudentName" prefWidth="292.0" text="Student name" />
          </columns>
       </TableView>
       <Label layoutX="243.0" layoutY="16.0" style="-fx-font-weight: bold;" text="Issued Book">
