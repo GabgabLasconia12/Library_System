@@ -102,9 +102,7 @@ public class Screen1Controller implements Initializable {
                         
                         if(Books.contains(searchBook.getBook()))
                        {
-                            //Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, Search.getText()+", is in the list of our library books"); 
-                           // AlertBox.showAndWait();
-                          //  Search.clear();
+                            
                              ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
                                 ButtonType NO = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
                                 Alert dg = new Alert(Alert.AlertType.CONFIRMATION, Search.getText()+", is in the list of our library books, do you want to borrow it?", YES,NO );
@@ -162,9 +160,7 @@ public class Screen1Controller implements Initializable {
                         
                         if(Books.contains(searchBook.getBook()))
                        {
-                           // Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, Search.getText()+", is in the list of our library books"); 
-                          //  AlertBox.showAndWait();
-                          //  Search.clear();
+                           
                             
                                ButtonType YES = new ButtonType("YES", ButtonBar.ButtonData.OK_DONE);
                                 ButtonType NO = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -200,14 +196,12 @@ public class Screen1Controller implements Initializable {
     @FXML
     private void _Issue_Book() throws IOException
     {
-      //  AnchorPane pane = FXMLLoader.load(getClass().getResource("Issue_Book.fxml"));
-        //  rootPane1.getChildren().setAll(pane);
+      
          FXMLLoader loader = new FXMLLoader(getClass().getResource("Issue_Book.fxml"));
            Parent root = loader.load();
            Issue_BookController student = loader.getController();
            student.setFullName(FullName.getText().toString());
            student.setICourse(Course.getText());
-         //  student.Fullname(FullName.getText());
            Issue_Book.getScene().setRoot(root);
          
     }
@@ -221,7 +215,6 @@ public class Screen1Controller implements Initializable {
            Return_BookController student = loader.getController();
            student.setRName(FullName.getText());
            student.setRCourse(Course.getText());
-          // student.setPame(FullName.getText());
            Return_Book.getScene().setRoot(root);
     }
     
@@ -241,7 +234,7 @@ public class Screen1Controller implements Initializable {
               {
             StudentsLog.add(ListOfStLog[k].getName());
             }
-           // System.out.println(StudentsLog.get(0));
+         
           File Todelte = new File("/Users/Gab/Desktop/try/Library_System/Students loggedIn/"+StudentsLog.get(0));
           Todelte.delete();
          System.out.println(StudentsLog);

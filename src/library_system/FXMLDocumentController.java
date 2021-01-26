@@ -93,9 +93,9 @@ public class FXMLDocumentController implements Initializable {
         try 
         {
             
-            File read = new File("/Users/Gab/Desktop/try/Library_System/Students Account/"+Id.getText()+".txt");
+            File read = new File("Students Account//"+Id.getText()+".txt");
             Scanner Reader = new Scanner(read);
-            Student = Reader.next().split("-");
+            Student = Reader.nextLine().split("-");
             Student_Fullname st = new Student_Fullname();
              
             

@@ -110,8 +110,8 @@ public class Issue_BookController implements Initializable
               {
             StudentsLog.add(ListOfStLog[k].getName());
             }
-           // System.out.println(StudentsLog.get(0));
-          File Todelte = new File("/Users/Gab/Desktop/try/Library_System/Students loggedIn/"+StudentsLog.get(0));
+          
+          File Todelte = new File("Students loggedIn//"+StudentsLog.get(0));
                Todelte.delete();
          System.out.println(StudentsLog);
            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -139,7 +139,7 @@ public class Issue_BookController implements Initializable
       // System.out.println(FullIName.getText());
          LinkedList<String> StudentsLog = new LinkedList<String>();
            LinkedList<String> Students = new LinkedList<String>();
-       File folder = new File("Borrowed books");
+       File folder = new File("Borrowed_books");
        File folderLog = new File("Students loggedIn");
        File [] ListOfStLog = folderLog.listFiles();
        File [] ListOfSt = folder.listFiles();
@@ -159,9 +159,9 @@ public class Issue_BookController implements Initializable
          //System.out.println(StudentsLog);
        if(Students.contains(StudentsLog.get(0)))
        {
-           File BookInfo = new File("/Users/Gab/Desktop/try/Library_System/Borrowed Books/"+StudentsLog.get(0));
+           File BookInfo = new File("Borrowed_books//"+StudentsLog.get(0));
            Scanner Reader = new Scanner(BookInfo);
-           String []  Book = Reader.next().split("-");
+           String []  Book = Reader.nextLine().split("-");
           
               observableList.addAll(new Issue_Books(Book[0]));
           

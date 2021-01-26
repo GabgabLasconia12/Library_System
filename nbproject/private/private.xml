@@ -3,17 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Issue_BookController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/BorrowBook.fxml</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Borrow_Book_Function.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/BooksController.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Issue_Books.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Student_Fullname.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/AdminController.java</file>
-            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Screen1Controller.java</file>
-            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Subok.java</file>
-            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Add_Book_FormController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Return_BookAdmin.fxml</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/BookData.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Books.fxml</file>
-            <file>file:/C:/Users/Gab/Desktop/try/Library_System/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Admin_LoginController.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Return_BookController.java</file>
             <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Search_Book.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/StackOfBook.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/View_issuedBookController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Book_Issued.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Library_System.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/ReturnBook.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Return_BookAdminController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Screen1Controller.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/BorrowBookController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Add_Book_FormController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Admin_LoginController.java</file>
+            <file>file:/C:/Users/Gab/Desktop/try/Library_System/src/library_system/Student_RegisterController.java</file>
         </group>
     </open-files>
 </project-private>

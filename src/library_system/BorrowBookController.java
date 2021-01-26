@@ -45,8 +45,10 @@ public class BorrowBookController   implements Initializable
     @FXML
     private void Borrow() throws IOException
     {
+     
      Borrow_Book_Function Function = new Borrow_Book_Function();
       LinkedList<String> BookBorrow = new  LinkedList();
+      
       Function.setBookT(BTitle.getText());
       Function.setStudentId(StudentId.getText());
       Function.setName(Name.getText());
@@ -55,10 +57,16 @@ public class BorrowBookController   implements Initializable
       BookBorrow.add(Function.getName());
       BookBorrow.add(Function.getStudentId());
       
-      
-      File file = new File("Borrowedbooks");
+      if(BTitle.getText().isEmpty() &&StudentId.getText().isEmpty()&& Name.getText().isEmpty())
+      {
+          Alert dg = new Alert(Alert.AlertType.ERROR, "All fields are require" );
+        Optional<ButtonType> result = dg.showAndWait();
+      }
+      else
+      {
+              File file = new File("Borrowed_books");
       file.mkdir();
-        try (FileWriter writer = new FileWriter("Borrowedbooks/"+Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt")) {
+        try (FileWriter writer = new FileWriter("Borrowed_books/"+Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt")) {
             for (String Bookinfo : BookBorrow) 
             {
                 writer.write(Bookinfo+"-");
@@ -66,7 +74,12 @@ public class BorrowBookController   implements Initializable
             writer.close();
            Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "You can now get the book to the librain!"); 
          AlertBox.showAndWait();
+         BTitle.clear();
+         StudentId.clear();
+         Name.clear();
         }
+      }
+  
     }
     
     

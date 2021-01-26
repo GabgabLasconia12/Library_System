@@ -82,8 +82,7 @@ public class Return_BookController  implements Initializable
     @FXML
     private void _Issue_Book() throws IOException
     {
-       // AnchorPane pane = FXMLLoader.load(getClass().getResource("Issue_Book.fxml"));
-          //  rootPane.getChildren().setAll(pane);
+       
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Issue_Book.fxml"));
            Parent root = loader.load();
            Issue_BookController student = loader.getController();
@@ -95,15 +94,14 @@ public class Return_BookController  implements Initializable
     @FXML
     private void _Back() throws IOException
     {
-          //AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
-         //   rootPane.getChildren().setAll(pane);
+          
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen1.fxml"));
            Parent root = loader.load();
            Screen1Controller student = loader.getController();
            student.setName(FullName.getText());
            student.setCourse(Course.getText());
            back.getScene().setRoot(root);
-           //System.out.println(Books.get(0));
+          
     }
     
     @FXML
@@ -122,7 +120,7 @@ public class Return_BookController  implements Initializable
               {
             StudentsLog.add(ListOfStLog[k].getName());
             }
-           // System.out.println(StudentsLog.get(0));
+         
           File Todelte = new File("/Users/Gab/Desktop/try/Library_System/Students loggedIn/"+StudentsLog.get(0));
                Todelte.delete();
          System.out.println(StudentsLog);
@@ -138,9 +136,8 @@ public class Return_BookController  implements Initializable
 
             BookName.setCellValueFactory(new PropertyValueFactory<> ("Book_Name"));
             DateToReturn.setCellValueFactory(new PropertyValueFactory<>("TimeToReturn"));
-          //  Screen1Controller sc = new Screen1Controller();
-        //String bv = sc.FullName.getText();
-        ;
+          
+       
       try {
           tableView.setItems(getBook());
           
@@ -154,17 +151,14 @@ public class Return_BookController  implements Initializable
 
     
             
-  //  Subok s = new Subok();
-   //Screen1Controller sc = new Screen1Controller();
-   //Return_BookController rc = new Return_BookController();
-  //  Return_BookController Bok = new Return_BookController();
+ 
    
     public ObservableList<ReturnBook> getBook() throws FileNotFoundException
    
     {
       LinkedList<String> StudentsLog = new LinkedList<String>();
       LinkedList<String> Students = new LinkedList<String>();
-       File folder = new File("Borrowed books");
+       File folder = new File("Borrowed_books");
        File folderLog = new File("Students loggedIn");
        File [] ListOfStLog = folderLog.listFiles();
        File [] ListOfSt = folder.listFiles();
@@ -184,9 +178,9 @@ public class Return_BookController  implements Initializable
          //System.out.println(StudentsLog);
        if(Students.contains(StudentsLog.get(0)))
        {
-           File BookInfo = new File("/Users/Gab/Desktop/try/Library_System/Borrowed Books/"+StudentsLog.get(0));
+           File BookInfo = new File("Borrowed_books//"+StudentsLog.get(0));
            Scanner Reader = new Scanner(BookInfo);
-           String []  Book = Reader.next().split("-");
+           String []  Book = Reader.nextLine().split("-");
           
               observableList.addAll(new ReturnBook(Book[0], "14 days to returned"));
           

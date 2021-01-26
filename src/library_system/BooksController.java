@@ -70,16 +70,10 @@ public class BooksController implements Initializable {
     {
     
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Add_Book_Form.fxml"));
-            //PARENT A simple node that can hold other nodes as a child. kada scene isang parent also known as  root lang ang pwede
-            Parent root1 = (Parent) fxmlLoader.load();
-            //STAGE is the window itself, kahit ilang window ang gusto mo is pede 
+            Parent root1 = (Parent) fxmlLoader.load(); 
             Stage stage = new Stage();
             stage.setScene(new Scene(root1)); 
             stage.show();
-            //NODE can be textfield button and etc.
-            //GETSOURCE Return the object  on which the event occured
-           //GETSCENE Gets the value of the property scene// Scene is part of node if the node is not part of a scene then this variable will be null
-            //GETWINDOW window might be stage, popupwindow or other such top level
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
        
             
@@ -136,12 +130,9 @@ public class BooksController implements Initializable {
       
        for(int j = 0; j<Books.size();j++)
            {
-               //System.out.println(j);
-               //String a = null;
-            //  String substring = a.substring(0,Books.get(j).lastIndexOf('.'));
-          //    System.out.print(substring);
+               
             observableList.addAll(new StackOfBook(Books.get(j).substring(0, Books.get(j).lastIndexOf("."))));
-            //observableList.addAll(new StackOfBook(a));
+          
             
            }
         

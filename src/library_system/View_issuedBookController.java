@@ -110,8 +110,8 @@ public class View_issuedBookController extends BookData implements Initializable
      public ObservableList<Book_Issued> getBooks() throws FileNotFoundException
    
     {
-           LinkedList<String> Books = new LinkedList<String>();
-       File folder = new File("Borrowedbooks");
+         LinkedList<String> Books = new LinkedList<String>();
+       File folder = new File("Borrowed_books");
        File [] ListOfBook = folder.listFiles();
        ObservableList<Book_Issued> observableList = FXCollections.observableArrayList();
        for(int i = 0; i<ListOfBook.length; i++)
@@ -121,12 +121,12 @@ public class View_issuedBookController extends BookData implements Initializable
        
       for(int k = 0; k<Books.size(); k++)
       {
-           File BookInfo = new File("/Users/Gab/Desktop/try/Library_System/Borrowedbooks/"+Books.get(k));
+           File BookInfo = new File("Borrowed_books//"+Books.get(k));
            Scanner Reader = new Scanner(BookInfo);
            String []  Book = Reader.nextLine().split("-");
            
                String NAme = Books.get(k).substring(0, Books.get(k).lastIndexOf("."));
-               
+               Reader.close();
                observableList.addAll(new Book_Issued(Book[0], NAme));
            
          
@@ -140,20 +140,15 @@ public class View_issuedBookController extends BookData implements Initializable
      public void ReturnButton()
      {
 
-         boolean isDelete = false;
+       
         ObservableList<Book_Issued> selectedRows, AllBooks;
      
-           /* TablePosition BookData = ViewIssuedBook.getSelectionModel().getSelectedCells().get(0);
-            int row = BookData.getRow();
-            Book_Issued Book = ViewIssuedBook.getItems().get(row);
-            TableColumn col = BookData.getTableColumn();
-            String Data = (String) col.getCellObservableValue(Book).getValue();
-            System.out.println(Data);*/
+        
            
              ObservableList<Book_Issued> Books;
              Books = ViewIssuedBook.getSelectionModel().getSelectedItems();
              String Data= Books.get(0).getName_()+".txt";
-             //System.out.println(Data);
+    
              
          AllBooks = ViewIssuedBook.getItems();
          
@@ -169,7 +164,7 @@ public class View_issuedBookController extends BookData implements Initializable
          
          
           LinkedList<String> BookTitle = new LinkedList<String>();
-         File folder = new File("Borrowedbooks");
+         File folder = new File("Borrowed_books");
          File [] ListOfBook = folder.listFiles();
          
          
@@ -184,37 +179,23 @@ public class View_issuedBookController extends BookData implements Initializable
           } 
          if(BookTitle.contains(Data))
          {
-             //System.out.print(Data);
+           
              try
              {
-                  File delete = new File("/Users/Gab/Desktop/try/Library_System/Borrowedbooks/Lasconia.txt");
-                 delete.delete();
+                  Files.deleteIfExists(Paths.get("Borrowed_books//"+Data));
+                Path path = Paths.get("FileTodelete");
+                Files.delete(path);
+                 
              }
              catch(Exception e)
              {
                 e.printStackTrace();
              }
-                // Files.deleteIfExists(Paths.get("C://Users//Gab//Desktop//try//Library_System//Borrowed books"));
-                 //Path path = Paths.get(Uri.parse(FileTodelete);
-                 //Files.delete(path);
-                  
-                //File file = new File(FileTodelete);
-               //  String path = file.getCanonicalPath();
-                // File filePath = new File(path);
-                // filePath.delete();
-          
+                
          }
          
-         else
-         {
-             System.out.print("tangian");
-         }
-        // if(isDelete)
-        // {
-        //     
-           //   File delete = new File("//Users//Gab//Desktop//try//Library_System//Borrowed books"+Data);
-           //      delete.delete();
-        // }
+       
+  
      }
     
     

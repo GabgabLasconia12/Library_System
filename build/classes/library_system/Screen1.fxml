@@ -19,7 +19,7 @@
             <Image url="@icons/dp2-01.png" />
          </image>
       </ImageView>
-      <Label fx:id="FullName" layoutX="37.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" text="aaa" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="FullName" layoutX="37.0" layoutY="190.0" style="-fx-font-weight: bold; -fx-text-alignment: center; -fx-font-size: 18;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
