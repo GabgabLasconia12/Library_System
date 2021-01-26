@@ -191,6 +191,8 @@ public class View_issuedBookController extends BookData implements Initializable
              {
                 e.printStackTrace();
              }
+             Alert dg = new Alert(Alert.AlertType.INFORMATION, "Deleted!");
+        dg.showAndWait();
                 
          }
          

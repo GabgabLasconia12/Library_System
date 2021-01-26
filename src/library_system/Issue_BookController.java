@@ -157,12 +157,12 @@ public class Issue_BookController implements Initializable
        {
            File BookInfo = new File("Borrowed_books//"+StudentsLog.get(0));
            Scanner Reader = new Scanner(BookInfo);
-           String []  Book = Reader.next().split("-");
+           String []  Book = Reader.nextLine().split("-");
           
               observableList.addAll(new Issue_Books(Book[0]));
           
        }
-           
+            
       
      
       
