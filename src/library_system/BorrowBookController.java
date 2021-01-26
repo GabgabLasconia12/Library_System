@@ -68,8 +68,7 @@ public class BorrowBookController   implements Initializable
              File [] ListOfBook = file.listFiles();
              LinkedList<String> Books = new LinkedList<String>();
              String check =Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt";
-             String check2=Function.getName().substring(0, Function.getName().lastIndexOf(","))+"(2)"+".txt";
-              String check3=Function.getName().substring(0, Function.getName().lastIndexOf(","))+"(3)"+".txt";
+            
               for(int i = 0; i<ListOfBook.length; i++)
                 {
                     Books.add(ListOfBook[i].getName());
