@@ -65,19 +65,38 @@ public class BorrowBookController   implements Initializable
       else
       {
               File file = new File("Borrowed_books");
-      file.mkdir();
-        try (FileWriter writer = new FileWriter("Borrowed_books/"+Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt")) {
-            for (String Bookinfo : BookBorrow) 
-            {
-                writer.write(Bookinfo+"-");
-            }
-            writer.close();
-           Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "You can now get the book to the librain!"); 
-         AlertBox.showAndWait();
-         BTitle.clear();
-         StudentId.clear();
-         Name.clear();
-        }
+             File [] ListOfBook = file.listFiles();
+             LinkedList<String> Books = new LinkedList<String>();
+             String check =Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt";
+             String check2=Function.getName().substring(0, Function.getName().lastIndexOf(","))+"(2)"+".txt";
+              String check3=Function.getName().substring(0, Function.getName().lastIndexOf(","))+"(3)"+".txt";
+              for(int i = 0; i<ListOfBook.length; i++)
+                {
+                    Books.add(ListOfBook[i].getName());
+                }  
+              if(Books.contains(check))
+              {
+                      Alert dg = new Alert(Alert.AlertType.INFORMATION, "You reach your limit" );
+                     Optional<ButtonType> result = dg.showAndWait();
+              }
+            
+              else
+              {
+               file.mkdir();
+                  try (FileWriter writer = new FileWriter("Borrowed_books/"+Function.getName().substring(0, Function.getName().lastIndexOf(","))+".txt")) {
+                      for (String Bookinfo : BookBorrow) 
+                      {
+                          writer.write(Bookinfo+"-");
+                      }
+                      writer.close();
+                     Alert AlertBox = new Alert(Alert.AlertType.INFORMATION, "You can now get the book to the librain!"); 
+                   AlertBox.showAndWait();
+                   BTitle.clear();
+                   StudentId.clear();
+                   Name.clear();
+                  }
+              }
+      
       }
   
     }

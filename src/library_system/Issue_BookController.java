@@ -70,8 +70,7 @@ public class Issue_BookController implements Initializable
    @FXML
    private void _Return_Book() throws IOException
    {
-      // AnchorPane pane = FXMLLoader.load(getClass().getResource("Return_Book.fxml"));
-            //rootPane.getChildren().setAll(pane);
+
            FXMLLoader loader = new FXMLLoader(getClass().getResource("Return_Book.fxml"));
            Parent root = loader.load();
            Return_BookController student = loader.getController();
@@ -84,8 +83,7 @@ public class Issue_BookController implements Initializable
    @FXML
    private void _Back() throws IOException
    {
-      // AnchorPane pane = FXMLLoader.load(getClass().getResource("Screen1.fxml"));
-           // rootPane.getChildren().setAll(pane);
+     
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen1.fxml"));
            Parent root = loader.load();
            Screen1Controller student = loader.getController();
@@ -110,7 +108,7 @@ public class Issue_BookController implements Initializable
               {
             StudentsLog.add(ListOfStLog[k].getName());
             }
-          
+        
           File Todelte = new File("Students loggedIn//"+StudentsLog.get(0));
                Todelte.delete();
          System.out.println(StudentsLog);
@@ -135,8 +133,6 @@ public class Issue_BookController implements Initializable
    
     {
        Student_Fullname name = new Student_Fullname();
-       //name.setFullname(FullIName.getText());
-      // System.out.println(FullIName.getText());
          LinkedList<String> StudentsLog = new LinkedList<String>();
            LinkedList<String> Students = new LinkedList<String>();
        File folder = new File("Borrowed_books");
@@ -144,29 +140,29 @@ public class Issue_BookController implements Initializable
        File [] ListOfStLog = folderLog.listFiles();
        File [] ListOfSt = folder.listFiles();
        ObservableList<Issue_Books> observableList = FXCollections.observableArrayList();
+      
+       for(int k = 0; k<ListOfStLog.length; k++)
+       {
+           StudentsLog.add(ListOfStLog[k].getName());
+       }
+       
        for(int i = 0; i<ListOfSt.length; i++)
        {
            
            Students.add(ListOfSt[i].getName());
          
        } 
-       for(int k = 0; k<ListOfStLog.length; k++)
-       {
-           StudentsLog.add(ListOfStLog[k].getName());
-       }
-       
-      
-         //System.out.println(StudentsLog);
+         
        if(Students.contains(StudentsLog.get(0)))
        {
            File BookInfo = new File("Borrowed_books//"+StudentsLog.get(0));
            Scanner Reader = new Scanner(BookInfo);
-           String []  Book = Reader.nextLine().split("-");
+           String []  Book = Reader.next().split("-");
           
               observableList.addAll(new Issue_Books(Book[0]));
           
        }
-           //observableList.addAll(new Issue_Books("sadasd"));
+           
       
      
       
