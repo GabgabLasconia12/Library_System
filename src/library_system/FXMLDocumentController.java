@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  *
@@ -44,7 +46,7 @@ import javafx.scene.layout.AnchorPane;
 // Login
 public class FXMLDocumentController implements Initializable {
 
-    
+    public String []  Student;
    
    @FXML
    public TextField Id;
@@ -86,22 +88,26 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException 
     {
-       // Screen1Controller scc = new Screen1Controller();
-        String id = "2000123";
-        String pass = "try123";
-        String name = "Ira";
-        //Screen1Controller sc = new Screen1Controller();
+      
       
         try 
         {
             
             File read = new File("/Users/Gab/Desktop/try/Library_System/Students Account/"+Id.getText()+".txt");
             Scanner Reader = new Scanner(read);
-            String [] Student = Reader.next().split("-");
+            Student = Reader.next().split("-");
+            Student_Fullname st = new Student_Fullname();
+             
             
+                   
                if(Id.getText().equals(Student[0]))
         {
          
+             File file = new File("Students loggedIn");
+             file.mkdir();
+             FileWriter wf = new FileWriter("Students loggedIn/"+Student[3]+".txt");
+             wf.write(Student[3]+", "+Student[2]);
+             wf.close();
           System.out.println("login complete");
           FXMLLoader loader = new FXMLLoader(getClass().getResource("Screen1.fxml"));
            Parent root = loader.load();
@@ -109,6 +115,8 @@ public class FXMLDocumentController implements Initializable {
            student.setName(Student[3]+", "+Student[2]);
            student.setCourse(Student[1]);
            btn.getScene().setRoot(root);
+           
+           
              
         }
             

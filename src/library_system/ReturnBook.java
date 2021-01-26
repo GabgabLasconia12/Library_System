@@ -27,6 +27,8 @@ public class ReturnBook
         this._TimetoReturn = new SimpleStringProperty(_TimetoReturn);
         
     }
+
+  
     public void setBookName(String _Book_Name)
     {
        this._Book_Name = new SimpleStringProperty(_Book_Name);

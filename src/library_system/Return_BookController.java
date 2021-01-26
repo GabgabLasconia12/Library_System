@@ -36,10 +36,11 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Gab
  */
-public class Return_BookController implements Initializable 
+public class Return_BookController  implements Initializable 
 {
   public static LinkedList<String> Books = new LinkedList<String> ();
  
+    
   
     @FXML
     private Button back;
@@ -114,6 +115,17 @@ public class Return_BookController implements Initializable
        Optional<ButtonType> result = dg.showAndWait();
        if(result.get()== YES)
        {
+           LinkedList<String> StudentsLog = new LinkedList<String>();
+           File folderLog = new File("Students loggedIn");
+            File [] ListOfStLog = folderLog.listFiles();
+            for(int k = 0; k<ListOfStLog.length; k++)
+              {
+            StudentsLog.add(ListOfStLog[k].getName());
+            }
+           // System.out.println(StudentsLog.get(0));
+          File Todelte = new File("/Users/Gab/Desktop/try/Library_System/Students loggedIn/"+StudentsLog.get(0));
+               Todelte.delete();
+         System.out.println(StudentsLog);
            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
             rootPane.getChildren().setAll(pane);
        }
@@ -150,16 +162,36 @@ public class Return_BookController implements Initializable
     public ObservableList<ReturnBook> getBook() throws FileNotFoundException
    
     {
-        
-        File read = new File("/Users/Gab/Desktop/try/Library_System/Borrowed books/"+FullName.getText()+".txt");
-            Scanner Reader = new Scanner(read);
-           Books.add(Reader.next());
-              
-        ObservableList<ReturnBook> observableList = FXCollections.observableArrayList();
+      LinkedList<String> StudentsLog = new LinkedList<String>();
+      LinkedList<String> Students = new LinkedList<String>();
+       File folder = new File("Borrowed books");
+       File folderLog = new File("Students loggedIn");
+       File [] ListOfStLog = folderLog.listFiles();
+       File [] ListOfSt = folder.listFiles();
+       ObservableList<ReturnBook> observableList = FXCollections.observableArrayList();
+       for(int i = 0; i<ListOfSt.length; i++)
+       {
+           
+           Students.add(ListOfSt[i].getName());
          
-         observableList.add(new ReturnBook(Books.get(0),"12"));
-
-         return observableList;
+       } 
+       for(int k = 0; k<ListOfStLog.length; k++)
+       {
+           StudentsLog.add(ListOfStLog[k].getName());
+       }
+       
+      
+         //System.out.println(StudentsLog);
+       if(Students.contains(StudentsLog.get(0)))
+       {
+           File BookInfo = new File("/Users/Gab/Desktop/try/Library_System/Borrowed Books/"+StudentsLog.get(0));
+           Scanner Reader = new Scanner(BookInfo);
+           String []  Book = Reader.next().split("-");
+          
+              observableList.addAll(new ReturnBook(Book[0], "14 days to returned"));
+          
+       }
+      return observableList;
     
     }
     

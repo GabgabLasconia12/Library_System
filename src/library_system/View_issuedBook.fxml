@@ -33,8 +33,8 @@
       <Line endX="89.99996948242188" layoutX="131.0" layoutY="502.0" opacity="0.3" startX="-127.00003051757812" stroke="WHITE" />
       <TableView fx:id="ViewIssuedBook" layoutX="256.0" layoutY="53.0" prefHeight="443.0" prefWidth="589.0" style="-fx-background-color: #e0e0e1\;">
          <columns>
-            <TableColumn fx:id="Book_Name" prefWidth="296.0" text="Book Name" />
-            <TableColumn fx:id="StudentName" prefWidth="292.0" text="Student name" />
+            <TableColumn fx:id="Book_Name" prefWidth="276.0" text="Book Name" />
+            <TableColumn fx:id="StudentName" prefWidth="387.0" text="Student Name" />
          </columns>
       </TableView>
       <Label layoutX="243.0" layoutY="16.0" style="-fx-font-weight: bold;" text="Issued Book">
@@ -42,6 +42,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="btnBack" layoutX="476.0" layoutY="518.0" onAction="#Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnBack" layoutX="352.0" layoutY="516.0" onAction="#Back" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: red; -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Back" textFill="WHITE" />
+      <Button fx:id="ReturnBook" layoutX="612.0" layoutY="516.0" onAction="#ReturnButton" prefHeight="28.0" prefWidth="124.0" style="-fx-background-radius: 5,5; -fx-border-radius: 5,5; -fx-background-color: rgb(64, 158, 131); -fx-font-family: System; -fx-font-size: 13; -fx-text-fill: white;" text="Return Book" textFill="WHITE" />
    </children>
 </AnchorPane>

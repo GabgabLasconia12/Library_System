@@ -123,6 +123,7 @@ public class BooksController implements Initializable {
      public ObservableList<StackOfBook> getBooks() throws FileNotFoundException
    
     {
+        
           LinkedList<String> Books = new LinkedList<String>();
        File folder = new File("Book List");
        File [] ListOfBook = folder.listFiles();
@@ -130,14 +131,17 @@ public class BooksController implements Initializable {
        for(int i = 0; i<ListOfBook.length; i++)
        {
            Books.add(ListOfBook[i].getName());
-         
-          
        }  
+      
+      
        for(int j = 0; j<Books.size();j++)
            {
-               System.out.println(j);
-            // observableList.addAll(new StackOfBook(Books.get(j)));
-            observableList.addAll(new StackOfBook(Books.get(j)));
+               //System.out.println(j);
+               //String a = null;
+            //  String substring = a.substring(0,Books.get(j).lastIndexOf('.'));
+          //    System.out.print(substring);
+            observableList.addAll(new StackOfBook(Books.get(j).substring(0, Books.get(j).lastIndexOf("."))));
+            //observableList.addAll(new StackOfBook(a));
             
            }
         
