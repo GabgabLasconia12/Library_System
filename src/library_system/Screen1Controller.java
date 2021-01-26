@@ -112,6 +112,7 @@ public class Screen1Controller implements Initializable {
                                    if(result.get() == YES)
                                 { 
                                        try {
+                                           Search.clear();
                                            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BorrowBook.fxml"));
                                            Parent root1 = (Parent) fxmlLoader.load();
                                            Stage stage = new Stage();
@@ -168,6 +169,7 @@ public class Screen1Controller implements Initializable {
                                 Optional<ButtonType> result = dg.showAndWait();
                                 if(result.get() == YES)
                                 { 
+                                    Search.clear();
                                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BorrowBook.fxml"));
                                     Parent root1 = (Parent) fxmlLoader.load();
                                     Stage stage = new Stage();
